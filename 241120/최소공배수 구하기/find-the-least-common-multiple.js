@@ -1,22 +1,15 @@
-const fs = require("fs")
+const fs = require("fs");
 
-const [n,m] = fs.readFileSync(0).toString().trim().split(" ");
+const [n, m] = fs.readFileSync(0).toString().trim().split(" ").map(Number);
 
-var answer =0;
-var minMul = 2;
-var mul = 2;
-var minNum = Math.min(n,m);
-var maxNum = Math.max(m,n);
-while(1){
-    if(minNum==maxNum){
-        answer=minNum;
-        console.log(answer)
-        return;
+
+const gcd = (a, b) => {
+    while (b !== 0) {
+        [a, b] = [b, a % b];
     }
-    minNum = n*minMul;
-    minMul++;
-    if(minNum>maxNum){
-        maxNum = m*mul;
-        mul++;
-    }
-}
+    return a;
+};
+
+const lcm = (a, b) => (a * b) / gcd(a, b);
+
+console.log(lcm(n, m));
