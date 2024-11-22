@@ -14,12 +14,12 @@ for(var i = 2; i<m+2; i++){
     }else if(arr[0]=="R"){
         if(iterator!=str.length) iterator++;
     }else if(arr[0]=="D"){
-        if(iterator!=str.length) str.splice(iterator,1);
+        if(iterator!=str.length) str.splice(iterator+1,1);
     }else if(arr[0]=="P"){
         str.splice(iterator+1,0,arr[1]);
         iterator++;
     }
-    // console.log(iterator)
+    // console.log(str)
 }
 
 console.log(str.join(""))
