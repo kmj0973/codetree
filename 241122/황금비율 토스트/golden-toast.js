@@ -5,7 +5,7 @@ const dataArr = fs.readFileSync(0).toString().trim().split("\n");
 const [n,m] = dataArr[0].split(" ").map(Number);
 
 const str = dataArr[1].split("");
-var iterator = str.length-1;
+var iterator = str.length;
 for(var i = 2; i<m+2; i++){
     const arr = dataArr[i].split(" ")
     // console.log(arr)
@@ -14,12 +14,13 @@ for(var i = 2; i<m+2; i++){
     }else if(arr[0]=="R"){
         if(iterator!=str.length) iterator++;
     }else if(arr[0]=="D"){
-        if(iterator!=str.length) str.splice(iterator+1,1);
+        if(iterator!=str.length) str.splice(iterator,1);
     }else if(arr[0]=="P"){
-        str.splice(iterator+1,0,arr[1]);
+        str.splice(iterator,0,arr[1]);
         iterator++;
     }
     // console.log(str)
+    // console.log(iterator)
 }
 
 console.log(str.join(""))
