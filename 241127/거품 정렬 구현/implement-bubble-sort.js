@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const dataArray = fs.readFileSync(0).toString().trim().split("\n");
 
-var arr = dataArray[1].split(" ");
+var arr = dataArray[1].split(" ").map(Number);
 let isTrue = true;
 do{
     isTrue = true
