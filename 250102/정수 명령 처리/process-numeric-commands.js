@@ -17,6 +17,6 @@ for(var i = 1; i < n+1; i++){
     }else if(a[0]=="pop"){
         console.log(arr.pop());
     }else{
-        console.log(arr.top());
+        console.log(arr[arr.length-1]);
     }
 }
